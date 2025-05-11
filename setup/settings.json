@@ -1,0 +1,10 @@
+{
+  "devMode": true,
+  "adminOnly": false,
+  "timeZone": "Asia/Dhaka",
+  "prefix": "/",
+  "symbols": "●",
+  "admin": [
+    "7927346717"
+  ]
+}

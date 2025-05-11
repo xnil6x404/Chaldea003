@@ -1,0 +1,1 @@
+Explore it on your own because i'm lazy to write the entire documentation of this Chaldea Telegram Bot
