@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { createUser } = require('../../core/utility/dbUtils');
 
 // Command configuration
 const meta = {
@@ -92,7 +93,11 @@ async function onStart({ bot, message, msg, args, usages }) {
       console.error("Error writing settings file:", error);
       return message.reply("Failed to update admin list.");
     }
-
+    try {
+      await createUser(targetId,msg.from.first_name)
+    } catch (e){
+      console.error(e)
+    }
     const userInfo = await getUserInfo(id);
     const userName = userInfo ? `${userInfo.first_name} ${userInfo.last_name || ''}` : 'User';
     return message.reply(`${userName} has been successfully added as an admin.`);

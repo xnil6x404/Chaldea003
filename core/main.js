@@ -36,3 +36,17 @@ scriptsUtils();
 // Require and call the login function
 const { login } = require('./system/login');
 login();
+
+const { connectDB } = require('./system/db');
+
+//... other code
+
+async function initializeDatabase() {
+  try {
+    global.db = await connectDB();
+  } catch (error) {
+    console.error("Failed to connect to the database:", error);
+  }
+}
+
+initializeDatabase();
